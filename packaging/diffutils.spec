@@ -27,6 +27,7 @@ gzip -9 %{buildroot}%{_infodir}/%{name}.info
 
 
 %files
+%license COPYING
 %defattr(-,root,root)
 %{_bindir}/cmp
 %{_bindir}/diff
