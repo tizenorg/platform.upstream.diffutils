@@ -6,6 +6,7 @@ Summary:        GNU diff Utilities
 Url:            http://www.gnu.org/software/diffutils/
 Group:          Productivity/Text/Utilities
 Source:         %{name}-%{version}.tar.xz
+Source1001: 	diffutils.manifest
 BuildRequires:  xz
 Provides:       diff
 Obsoletes:      diff
@@ -16,6 +17,7 @@ make source code patches, for instance.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 %configure --disable-nls
@@ -27,6 +29,7 @@ gzip -9 %{buildroot}%{_infodir}/%{name}.info
 
 
 %files
+%manifest %{name}.manifest
 %license COPYING
 %defattr(-,root,root)
 %{_bindir}/cmp
