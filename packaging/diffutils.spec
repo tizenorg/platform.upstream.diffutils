@@ -1,15 +1,15 @@
 Name:           diffutils
-Version:        3.2
+Version:        3.3
 Release:        0
-License:        GFDL-1.2 ; GPL-3.0+
+License:        GPL-3.0+ and GFDL-1.3+
 Summary:        GNU diff Utilities
 Url:            http://www.gnu.org/software/diffutils/
-Group:          Productivity/Text/Utilities
+Group:          System/Development
 Source:         %{name}-%{version}.tar.xz
 Source1001: 	diffutils.manifest
 BuildRequires:  xz
-Provides:       diff
-Obsoletes:      diff
+Provides:       diff = %{version}
+Obsoletes:      diff < %{version}
 
 %description
 The GNU diff utilities find differences between files. diff is used to
