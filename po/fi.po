@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: diffutils 2.8.7\n"
 "Report-Msgid-Bugs-To: bug-diffutils@gnu.org\n"
-"POT-Creation-Date: 2011-09-02 17:19+0200\n"
+"POT-Creation-Date: 2013-03-24 11:05-0700\n"
 "PO-Revision-Date: 2004-04-19 14:36+03:00\n"
 "Last-Translator: Lauri Nurmi <lanurmi@iki.fi>\n"
 "Language-Team: Finnish <translation-team-fi@lists.sourceforge.net>\n"
@@ -23,7 +23,7 @@ msgstr "ohjelmavirhe"
 msgid "stack overflow"
 msgstr "pinon ylivuoto"
 
-#: lib/error.c:185
+#: lib/error.c:188
 msgid "Unknown system error"
 msgstr "Tuntematon järjestelmävirhe"
 
@@ -136,100 +136,102 @@ msgstr "%s: valitsin \"%s\" vaatii argumentin\n"
 
 #. TRANSLATORS:
 #. Get translations for open and closing quotation marks.
-#.
 #. The message catalog should translate "`" to a left
 #. quotation mark suitable for the locale, and similarly for
-#. "'".  If the catalog has no translation,
-#. locale_quoting_style quotes `like this', and
-#. clocale_quoting_style quotes "like this".
+#. "'".  For example, a French Unicode local should translate
+#. these to U+00AB (LEFT-POINTING DOUBLE ANGLE
+#. QUOTATION MARK), and U+00BB (RIGHT-POINTING DOUBLE ANGLE
+#. QUOTATION MARK), respectively.
 #.
-#. For example, an American English Unicode locale should
-#. translate "`" to U+201C (LEFT DOUBLE QUOTATION MARK), and
-#. should translate "'" to U+201D (RIGHT DOUBLE QUOTATION
-#. MARK).  A British English Unicode locale should instead
-#. translate these to U+2018 (LEFT SINGLE QUOTATION MARK)
-#. and U+2019 (RIGHT SINGLE QUOTATION MARK), respectively.
+#. If the catalog has no translation, we will try to
+#. use Unicode U+2018 (LEFT SINGLE QUOTATION MARK) and
+#. Unicode U+2019 (RIGHT SINGLE QUOTATION MARK).  If the
+#. current locale is not Unicode, locale_quoting_style
+#. will quote 'like this', and clocale_quoting_style will
+#. quote "like this".  You should always include translations
+#. for "`" and "'" even if U+2018 and U+2019 are appropriate
+#. for your locale.
 #.
 #. If you don't know what to put here, please see
-#. <http://en.wikipedia.org/wiki/Quotation_mark#Glyphs>
+#. <http://en.wikipedia.org/wiki/Quotation_marks_in_other_languages>
 #. and use glyphs suitable for your language.
-#: lib/quotearg.c:271
+#: lib/quotearg.c:312
 msgid "`"
 msgstr ""
 
-#: lib/quotearg.c:272
+#: lib/quotearg.c:313
 msgid "'"
 msgstr ""
 
-#: lib/regcomp.c:133
+#: lib/regcomp.c:131
 msgid "Success"
 msgstr "Onnistui"
 
-#: lib/regcomp.c:136
+#: lib/regcomp.c:134
 msgid "No match"
 msgstr "Ei vastaavuutta"
 
-#: lib/regcomp.c:139
+#: lib/regcomp.c:137
 msgid "Invalid regular expression"
 msgstr "Virheellinen säännöllinen lauseke"
 
-#: lib/regcomp.c:142
+#: lib/regcomp.c:140
 msgid "Invalid collation character"
 msgstr "Virheellinen vertailumerkki"
 
-#: lib/regcomp.c:145
+#: lib/regcomp.c:143
 msgid "Invalid character class name"
 msgstr "Virheellinen merkkiluokan nimi"
 
-#: lib/regcomp.c:148
+#: lib/regcomp.c:146
 msgid "Trailing backslash"
 msgstr "Kenoviiva lopussa"
 
-#: lib/regcomp.c:151
+#: lib/regcomp.c:149
 msgid "Invalid back reference"
 msgstr "Virheellinen takaisinviittaus"
 
-#: lib/regcomp.c:154
+#: lib/regcomp.c:152
 msgid "Unmatched [ or [^"
 msgstr "Pariton [ tai [^"
 
-#: lib/regcomp.c:157
+#: lib/regcomp.c:155
 msgid "Unmatched ( or \\("
 msgstr "Pariton ( tai \\("
 
-#: lib/regcomp.c:160
+#: lib/regcomp.c:158
 msgid "Unmatched \\{"
 msgstr "Pariton \\{"
 
-#: lib/regcomp.c:163
+#: lib/regcomp.c:161
 msgid "Invalid content of \\{\\}"
 msgstr "Virheellinen \"\\{\\}\":n sisältö"
 
-#: lib/regcomp.c:166
+#: lib/regcomp.c:164
 msgid "Invalid range end"
 msgstr "Virheellinen välin loppu"
 
-#: lib/regcomp.c:169
+#: lib/regcomp.c:167
 msgid "Memory exhausted"
 msgstr "Muisti lopussa"
 
-#: lib/regcomp.c:172
+#: lib/regcomp.c:170
 msgid "Invalid preceding regular expression"
 msgstr "Virheellinen edeltävä säännöllinen lauseke"
 
-#: lib/regcomp.c:175
+#: lib/regcomp.c:173
 msgid "Premature end of regular expression"
 msgstr "Ennenaikainen säännöllisen lausekkeen loppu"
 
-#: lib/regcomp.c:178
+#: lib/regcomp.c:176
 msgid "Regular expression too big"
 msgstr "Liian suuri säännöllinen lauseke"
 
-#: lib/regcomp.c:181
+#: lib/regcomp.c:179
 msgid "Unmatched ) or \\)"
 msgstr "Pariton ) tai \\)"
 
-#: lib/regcomp.c:702
+#: lib/regcomp.c:704
 msgid "No previous regular expression"
 msgstr "Ei edellistä säännöllistä lauseketta"
 
@@ -261,17 +263,17 @@ msgstr ""
 
 #: lib/xstrtol-error.c:63
 #, fuzzy, c-format
-msgid "invalid %s%s argument `%s'"
+msgid "invalid %s%s argument '%s'"
 msgstr "virheellinen arvo \"%s\" valitsimelle --bytes"
 
 #: lib/xstrtol-error.c:68
-#, fuzzy, c-format
-msgid "invalid suffix in %s%s argument `%s'"
-msgstr "virheellinen horisontin pituus \"%s\""
+#, c-format
+msgid "invalid suffix in %s%s argument '%s'"
+msgstr ""
 
 #: lib/xstrtol-error.c:72
 #, c-format
-msgid "%s%s argument `%s' too large"
+msgid "%s%s argument '%s' too large"
 msgstr ""
 
 #: lib/version-etc.c:74
@@ -440,7 +442,7 @@ msgstr ""
 msgid "General help using GNU software: <http://www.gnu.org/gethelp/>\n"
 msgstr ""
 
-#: src/analyze.c:459 src/diff.c:1279
+#: src/analyze.c:459 src/diff.c:1343
 #, c-format
 msgid "Files %s and %s differ\n"
 msgstr "Tiedostot %s ja %s eroavat\n"
@@ -450,7 +452,7 @@ msgstr "Tiedostot %s ja %s eroavat\n"
 msgid "Binary files %s and %s differ\n"
 msgstr "Binääritiedostot %s ja %s eroavat\n"
 
-#: src/analyze.c:713 src/diff3.c:1437 src/util.c:572
+#: src/analyze.c:713 src/diff3.c:1416 src/util.c:663
 msgid "No newline at end of file"
 msgstr "Ei rivinvaihtoa tiedoston lopussa"
 
@@ -464,14 +466,14 @@ msgstr "Torbjörn Granlund"
 msgid "David MacKenzie"
 msgstr ""
 
-#: src/cmp.c:118 src/diff.c:836 src/diff3.c:414 src/sdiff.c:155
-#, c-format
-msgid "Try `%s --help' for more information."
+#: src/cmp.c:118 src/diff.c:839 src/diff3.c:414 src/sdiff.c:158
+#, fuzzy, c-format
+msgid "Try '%s --help' for more information."
 msgstr "Kokeile \"%s --help\" saadaksesi lisää tietoa."
 
 #: src/cmp.c:137
-#, c-format
-msgid "invalid --ignore-initial value `%s'"
+#, fuzzy, c-format
+msgid "invalid --ignore-initial value '%s'"
 msgstr "virheellinen arvo \"%s\" valitsimelle --ignore-initial"
 
 #: src/cmp.c:147
@@ -479,14 +481,14 @@ msgstr "virheellinen arvo \"%s\" valitsimelle --ignore-initial"
 msgid "options -l and -s are incompatible"
 msgstr "valitsimet -l ja -s eivät ole yhteensopivia"
 
-#: src/cmp.c:155 src/diff.c:845 src/diff3.c:422 src/sdiff.c:164
-#: src/sdiff.c:312 src/sdiff.c:319 src/sdiff.c:883 src/util.c:191
-#: src/util.c:284 src/util.c:291
+#: src/cmp.c:155 src/diff.c:848 src/diff3.c:422 src/sdiff.c:167
+#: src/sdiff.c:315 src/sdiff.c:322 src/sdiff.c:874 src/util.c:278
+#: src/util.c:375 src/util.c:382
 msgid "write failed"
 msgstr "kirjoitus epäonnistui"
 
-#: src/cmp.c:157 src/diff.c:847 src/diff.c:1344 src/diff3.c:424
-#: src/sdiff.c:166
+#: src/cmp.c:157 src/diff.c:850 src/diff.c:1408 src/diff3.c:424
+#: src/sdiff.c:169
 msgid "standard output"
 msgstr "vakiotuloste"
 
@@ -551,7 +553,7 @@ msgid ""
 msgstr ""
 "OHITA1 ja OHITA2 ovat jokaisessa tiedostossa ohitettavien tavujen määrä."
 
-#: src/cmp.c:185 src/diff.c:952 src/diff3.c:462 src/sdiff.c:207
+#: src/cmp.c:185 src/diff.c:956 src/diff3.c:462 src/sdiff.c:210
 msgid ""
 "Mandatory arguments to long options are mandatory for short options too.\n"
 msgstr ""
@@ -567,28 +569,29 @@ msgstr ""
 "GB 1,000,000,000, G 1,073,741,824, sekä T, P, E, Z, Y."
 
 #: src/cmp.c:194
-msgid "If a FILE is `-' or missing, read standard input."
+#, fuzzy
+msgid "If a FILE is '-' or missing, read standard input."
 msgstr "Jos TIEDOSTO on \"-\" tai puuttuu, luetaan vakiosyötteestä."
 
-#: src/cmp.c:195 src/diff.c:940 src/sdiff.c:217
+#: src/cmp.c:195 src/diff.c:944 src/sdiff.c:220
 msgid "Exit status is 0 if inputs are the same, 1 if different, 2 if trouble."
 msgstr ""
 "Paluuarvo on 0, jos syötteet ovat samoja, 1 jos erilaisia, "
 "ongelmatilanteissa 2."
 
 #: src/cmp.c:240
-#, c-format
-msgid "invalid --bytes value `%s'"
+#, fuzzy, c-format
+msgid "invalid --bytes value '%s'"
 msgstr "virheellinen arvo \"%s\" valitsimelle --bytes"
 
-#: src/cmp.c:266 src/diff.c:754 src/diff3.c:318 src/sdiff.c:562
-#, c-format
-msgid "missing operand after `%s'"
+#: src/cmp.c:266 src/diff.c:757 src/diff3.c:318 src/sdiff.c:565
+#, fuzzy, c-format
+msgid "missing operand after '%s'"
 msgstr "puuttuva operandi argumentin \"%s\" jälkeen"
 
-#: src/cmp.c:278 src/diff.c:756 src/diff3.c:320 src/sdiff.c:564
-#, c-format
-msgid "extra operand `%s'"
+#: src/cmp.c:278 src/diff.c:759 src/diff3.c:320 src/sdiff.c:567
+#, fuzzy, c-format
+msgid "extra operand '%s'"
 msgstr "ylimääräinen operandi \"%s\""
 
 #: src/cmp.c:491
@@ -607,212 +610,213 @@ msgid "cmp: EOF on %s\n"
 msgstr "cmp: Tiedoston %s loppu\n"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff.c:48
+#: src/diff.c:49
 msgid "Paul Eggert"
 msgstr ""
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff.c:49
+#: src/diff.c:50
 msgid "Mike Haertel"
 msgstr ""
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff.c:50
+#: src/diff.c:51
 msgid "David Hayes"
 msgstr ""
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff.c:51
+#: src/diff.c:52
 msgid "Richard Stallman"
 msgstr ""
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/diff.c:52
+#: src/diff.c:53
 msgid "Len Tower"
 msgstr ""
 
-#: src/diff.c:340
-#, c-format
-msgid "invalid context length `%s'"
+#: src/diff.c:339
+#, fuzzy, c-format
+msgid "invalid context length '%s'"
 msgstr "virheellinen kontekstin pituus \"%s\""
 
-#: src/diff.c:423
+#: src/diff.c:422
 #, c-format
 msgid "pagination not supported on this host"
 msgstr "tämä isäntä ei tue sivunumerointia"
 
-#: src/diff.c:438 src/diff3.c:300
+#: src/diff.c:437 src/diff3.c:300
 #, c-format
 msgid "too many file label options"
 msgstr "liian monta tiedostonimivalitsinta"
 
-#: src/diff.c:515
-#, c-format
-msgid "invalid width `%s'"
+#: src/diff.c:514
+#, fuzzy, c-format
+msgid "invalid width '%s'"
 msgstr "virheellinen leveys \"%s\""
 
-#: src/diff.c:519
+#: src/diff.c:518
 msgid "conflicting width options"
 msgstr "ristiriitaiset leveysvalinnat"
 
-#: src/diff.c:544
-#, c-format
-msgid "invalid horizon length `%s'"
+#: src/diff.c:543
+#, fuzzy, c-format
+msgid "invalid horizon length '%s'"
 msgstr "virheellinen horisontin pituus \"%s\""
 
-#: src/diff.c:595
-#, c-format
-msgid "invalid tabsize `%s'"
+#: src/diff.c:598
+#, fuzzy, c-format
+msgid "invalid tabsize '%s'"
 msgstr "virheellinen sarkaimen koko \"%s\""
 
-#: src/diff.c:599
+#: src/diff.c:602
 msgid "conflicting tabsize options"
 msgstr "ristiriitaiset sarkaimen kokovalinnat"
 
-#: src/diff.c:731
+#: src/diff.c:734
 msgid "--from-file and --to-file both specified"
 msgstr "sekä valitsin --from-file että --to-file on määritetty"
 
-#: src/diff.c:851
+#: src/diff.c:854
 #, fuzzy
 msgid "    --normal                  output a normal diff (the default)"
 msgstr "--normal  Tulosta normaali diff."
 
-#: src/diff.c:852
+#: src/diff.c:855
 #, fuzzy
 msgid "-q, --brief                   report only when files differ"
 msgstr "-q  --brief  Kertoo vain, eroavatko tiedostot."
 
-#: src/diff.c:853
+#: src/diff.c:856
 #, fuzzy
 msgid "-s, --report-identical-files  report when two files are the same"
 msgstr "-s  --report-identical-files  Ilmoita, jos kaksi tiedostoa ovat samat."
 
-#: src/diff.c:854
-#, fuzzy
+#: src/diff.c:857
 msgid ""
 "-c, -C NUM, --context[=NUM]   output NUM (default 3) lines of copied context"
 msgstr ""
-"-w MÄÄRÄ  --width=MÄÄRÄ  Tulosta enintään MÄÄRÄ (oletus 130) merkkiä riville."
 
-#: src/diff.c:855
+#: src/diff.c:858
 #, fuzzy
 msgid ""
 "-u, -U NUM, --unified[=NUM]   output NUM (default 3) lines of unified context"
 msgstr ""
 "-w MÄÄRÄ  --width=MÄÄRÄ  Tulosta enintään MÄÄRÄ (oletus 130) merkkiä riville."
 
-#: src/diff.c:856
+#: src/diff.c:859
 #, fuzzy
 msgid "-e, --ed                      output an ed script"
-msgstr "-a  --text  Käsittelee kaikki tiedostot tekstinä."
+msgstr "-e  --ed  Tulosta ed-skripti."
 
-#: src/diff.c:857
+#: src/diff.c:860
 #, fuzzy
 msgid "-n, --rcs                     output an RCS format diff"
 msgstr "-n  --rcs  Tulosta RCS-muotoinen diff."
 
-#: src/diff.c:858
-#, fuzzy
+#: src/diff.c:861
 msgid "-y, --side-by-side            output in two columns"
-msgstr "-v  --version  Näyttää versiotiedot."
+msgstr ""
 
-#: src/diff.c:859
+#: src/diff.c:862
 #, fuzzy
 msgid ""
 "-W, --width=NUM               output at most NUM (default 130) print columns"
 msgstr ""
 "-w MÄÄRÄ  --width=MÄÄRÄ  Tulosta enintään MÄÄRÄ (oletus 130) merkkiä riville."
 
-#: src/diff.c:860
+#: src/diff.c:863
 #, fuzzy
 msgid ""
 "    --left-column             output only the left column of common lines"
 msgstr "-l  --left-column  Tulosta vain yhteisten rivien vasen palsta"
 
-#: src/diff.c:861
+#: src/diff.c:864
 #, fuzzy
 msgid "    --suppress-common-lines   do not output common lines"
 msgstr "-s  --suppress-common-lines  Älä tulosta yhteisiä rivejä."
 
-#: src/diff.c:863
+#: src/diff.c:866
 msgid "-p, --show-c-function         show which C function each change is in"
 msgstr ""
 
-#: src/diff.c:864
+#: src/diff.c:867
 msgid "-F, --show-function-line=RE   show the most recent line matching RE"
 msgstr ""
 
-#: src/diff.c:865
+#: src/diff.c:868
 msgid ""
 "    --label LABEL             use LABEL instead of file name\n"
 "                                (can be repeated)"
 msgstr ""
 
-#: src/diff.c:868
+#: src/diff.c:871
 #, fuzzy
 msgid "-t, --expand-tabs             expand tabs to spaces in output"
 msgstr "-t  --expand-tabs  Laajentaa sarkaimet välilyönneiksi tulosteessa."
 
-#: src/diff.c:869
+#: src/diff.c:872
 #, fuzzy
 msgid "-T, --initial-tab             make tabs line up by prepending a tab"
 msgstr "-T  --initial-tab  Lisää sarkain rivien alkuun."
 
-#: src/diff.c:870
+#: src/diff.c:873
 #, fuzzy
 msgid ""
 "    --tabsize=NUM             tab stops every NUM (default 8) print columns"
 msgstr "--tabsize=KOKO Sarkaimen koko on KOKO (oletus 8) merkkiä."
 
-#: src/diff.c:871
+#: src/diff.c:874
 msgid ""
 "    --suppress-blank-empty    suppress space or tab before empty output lines"
 msgstr ""
 
-#: src/diff.c:872
+#: src/diff.c:875
 #, fuzzy
-msgid "-l, --paginate                pass output through `pr' to paginate it"
+msgid "-l, --paginate                pass output through 'pr' to paginate it"
 msgstr ""
 "-l  --paginate  Ohjaa tuloste ohjelman \"pr\" läpi sivunumerointia varten."
 
-#: src/diff.c:874
+#: src/diff.c:877
 #, fuzzy
 msgid ""
 "-r, --recursive                 recursively compare any subdirectories found"
 msgstr "-r  --recursive  Vertaa löytyneitä alihakemistoja rekursiivisesti."
 
-#: src/diff.c:875
+#: src/diff.c:878
+msgid "    --no-dereference            don't follow symbolic links"
+msgstr ""
+
+#: src/diff.c:879
 #, fuzzy
 msgid "-N, --new-file                  treat absent files as empty"
 msgstr "-N  --new-file  Käsittele puuttuvia tiedostoja tyhjinä."
 
-#: src/diff.c:876
+#: src/diff.c:880
 #, fuzzy
 msgid "    --unidirectional-new-file   treat absent first files as empty"
 msgstr "--unidirectional-new-file  Käsittele puuttuvia tiedostoja tyhjinä."
 
-#: src/diff.c:877
+#: src/diff.c:881
 #, fuzzy
 msgid "    --ignore-file-name-case     ignore case when comparing file names"
 msgstr ""
 "--ignore-file-name-case  Älä huomioi kirjainkokoa tiedostojen nimiä "
 "verrattaessa."
 
-#: src/diff.c:878
+#: src/diff.c:882
 #, fuzzy
 msgid "    --no-ignore-file-name-case  consider case when comparing file names"
 msgstr ""
 "--no-ignore-file-name-case  Kirjainkoko huomioidaan tiedostonimiä "
 "verrattaessa."
 
-#: src/diff.c:879
+#: src/diff.c:883
 #, fuzzy
 msgid "-x, --exclude=PAT               exclude files that match PAT"
 msgstr ""
 "-x HAHMO  --exclude=HAHMO  Jätä pois tiedostot, jotka vastaavat HAHMOa."
 
-#: src/diff.c:880
+#: src/diff.c:884
 #, fuzzy
 msgid ""
 "-X, --exclude-from=FILE         exclude files that match any pattern in FILE"
@@ -820,7 +824,7 @@ msgstr ""
 "-X TIEDOSTO --exclude-from=TIEDOSTO  Jätä pois TIEDOSTOssa listatut "
 "tiedostot."
 
-#: src/diff.c:881
+#: src/diff.c:885
 #, fuzzy
 msgid ""
 "-S, --starting-file=FILE        start with FILE when comparing directories"
@@ -828,7 +832,7 @@ msgstr ""
 "-S TIEDOSTO  --starting-file=TIEDOSTO  Aloita TIEDOSTOlla verrattaessa "
 "hakemistoja."
 
-#: src/diff.c:882
+#: src/diff.c:886
 #, fuzzy
 msgid ""
 "    --from-file=FILE1           compare FILE1 to all operands;\n"
@@ -837,7 +841,7 @@ msgstr ""
 "--from-file=TIEDOSTO1  Vertaa TIEDOSTO1:ä kaikkiin operandeihin. TIEDOSTO1 "
 "voi olla hakemisto."
 
-#: src/diff.c:884
+#: src/diff.c:888
 #, fuzzy
 msgid ""
 "    --to-file=FILE2             compare all operands to FILE2;\n"
@@ -846,7 +850,7 @@ msgstr ""
 "--to-file=TIEDOSTO2  Vertaa kaikkia operandeja TIEDOSTO2:een. TIEDOSTO2 voi "
 "olla hakemisto."
 
-#: src/diff.c:887
+#: src/diff.c:891
 #, fuzzy
 msgid ""
 "-i, --ignore-case               ignore case differences in file contents"
@@ -854,98 +858,99 @@ msgstr ""
 "-i  --ignore-case  Älä huomioi kirjainkokoa tiedostojen sisältöä "
 "verrattaessa."
 
-#: src/diff.c:888
+#: src/diff.c:892
 #, fuzzy
 msgid "-E, --ignore-tab-expansion      ignore changes due to tab expansion"
 msgstr ""
 "-E  --ignore-tab-expansion  Älä huomioi sarkainten laajennuksesta johtuvia "
 "eroja."
 
-#: src/diff.c:889
+#: src/diff.c:893
 #, fuzzy
 msgid "-Z, --ignore-trailing-space     ignore white space at line end"
 msgstr "-w  --ignore-all-white-space  Älä huomioi tyhjiä merkkejä."
 
-#: src/diff.c:890
+#: src/diff.c:894
 #, fuzzy
 msgid ""
 "-b, --ignore-space-change       ignore changes in the amount of white space"
 msgstr ""
 "-b  --ignore-space-change  Älä huomioi tyhjistä merkeistä johtuvia eroja."
 
-#: src/diff.c:891
+#: src/diff.c:895
 #, fuzzy
 msgid "-w, --ignore-all-space          ignore all white space"
 msgstr "-w  --ignore-all-white-space  Älä huomioi tyhjiä merkkejä."
 
-#: src/diff.c:892
+#: src/diff.c:896
 #, fuzzy
 msgid ""
-"-B, --ignore-blank-lines        ignore changes whose lines are all blank"
+"-B, --ignore-blank-lines        ignore changes where lines are all blank"
 msgstr ""
 "-B  --ignore-blank-lines  Älä huomioi tyhjistä riveistä johtuvia eroja."
 
-#: src/diff.c:893 src/sdiff.c:178
+#: src/diff.c:897
 #, fuzzy
-msgid "-I, --ignore-matching-lines=RE  ignore changes whose lines all match RE"
+msgid "-I, --ignore-matching-lines=RE  ignore changes where all lines match RE"
 msgstr ""
 "-I SI  --ignore-matching-lines=SI  Älä huomioi eroavia rivejä, jotka "
 "vastaavat säännöllistä lauseketta."
 
-#: src/diff.c:895
+#: src/diff.c:899
 #, fuzzy
 msgid "-a, --text                      treat all files as text"
 msgstr "-a  --text  Käsittelee kaikki tiedostot tekstinä."
 
-#: src/diff.c:896
+#: src/diff.c:900
 #, fuzzy
 msgid "    --strip-trailing-cr         strip trailing carriage return on input"
 msgstr "--strip-trailing-cr  Poista lopussa oleva vaununpalautus syötteestä."
 
-#: src/diff.c:898
+#: src/diff.c:902
 #, fuzzy
 msgid "    --binary                    read and write data in binary mode"
 msgstr "--binary  Lukee ja kirjoittaa dataa binääritilassa."
 
-#: src/diff.c:901
+#: src/diff.c:905
 #, fuzzy
 msgid ""
-"-D, --ifdef=NAME                output merged file with `#ifdef NAME' diffs"
+"-D, --ifdef=NAME                output merged file with '#ifdef NAME' diffs"
 msgstr ""
 "-D NIMI  --ifdef=NIMI  Tulosta yhdistetty tiedosto näyttämään \"#ifdef NIMI"
 "\"-erot."
 
-#: src/diff.c:902
+#: src/diff.c:906
 #, fuzzy
 msgid "    --GTYPE-group-format=GFMT   format GTYPE input groups with GFMT"
 msgstr ""
 "--GTYYPPI-group-format=GMUOTO  Sama, muotoile GTYYPPIset syöteryhmät "
 "GMUOTOon."
 
-#: src/diff.c:903
+#: src/diff.c:907
 #, fuzzy
 msgid "    --line-format=LFMT          format all input lines with LFMT"
 msgstr "--line-format=LMUOTO  Sama, muotoile kaikki syöterivit LMUOTOon."
 
-#: src/diff.c:904
+#: src/diff.c:908
 #, fuzzy
 msgid "    --LTYPE-line-format=LFMT    format LTYPE input lines with LFMT"
 msgstr ""
 "--LTYYPPI-line-format=MUOTO  Sama, muotoile LTYYPPIset syöterivit LMUOTOon."
 
-#: src/diff.c:905
+#: src/diff.c:909
 msgid ""
 "  These format options provide fine-grained control over the output\n"
 "    of diff, generalizing -D/--ifdef."
 msgstr ""
 
-#: src/diff.c:907
-msgid "  LTYPE is `old', `new', or `unchanged'.  GTYPE is LTYPE or `changed'."
+#: src/diff.c:911
+#, fuzzy
+msgid "  LTYPE is 'old', 'new', or 'unchanged'.  GTYPE is LTYPE or 'changed'."
 msgstr ""
 "  LTYYPPI on \"old\", \"new\" tai \"unchanged\". GTYYPPI on LTYYPPI tai "
 "\"changed\"."
 
-#: src/diff.c:908
+#: src/diff.c:912
 #, fuzzy
 msgid ""
 "  GFMT (only) may contain:\n"
@@ -974,7 +979,7 @@ msgstr ""
 "        E  F-1\n"
 "        M  L+1"
 
-#: src/diff.c:920
+#: src/diff.c:924
 #, fuzzy
 msgid ""
 "  LFMT (only) may contain:\n"
@@ -987,7 +992,7 @@ msgstr ""
 "    %l  rivin sisältö, mahdollinen edeltävä rivinvaihto poislukien\n"
 "    %[-][LEVEYS][.[TARKK]]{doxX}n syöterivin numero printf-tyylillä"
 
-#: src/diff.c:924
+#: src/diff.c:928
 #, fuzzy
 msgid ""
 "  Both GFMT and LFMT may contain:\n"
@@ -1001,19 +1006,19 @@ msgstr ""
 "    %c'C'  yksittäinen merkki C\n"
 "    %c'\\OOO'  yksittäinen merkki oktaalikoodilla OOO"
 
-#: src/diff.c:930
+#: src/diff.c:934
 #, fuzzy
 msgid "-d, --minimal            try hard to find a smaller set of changes"
 msgstr "-d  --minimal  Yrittää löytää pienemmän määrän muutoksia."
 
-#: src/diff.c:931
+#: src/diff.c:935
 #, fuzzy
 msgid "    --horizon-lines=NUM  keep NUM lines of the common prefix and suffix"
 msgstr ""
 "--horizon-lines=MÄÄRÄ  Säilytä MÄÄRÄ riviä yhteisestä etu- ja "
 "jälkiliitteestä."
 
-#: src/diff.c:932
+#: src/diff.c:936
 #, fuzzy
 msgid ""
 "    --speed-large-files  assume large files and many scattered small changes"
@@ -1021,23 +1026,24 @@ msgstr ""
 "-H  --speed-large-files  Oleta suuret tiedostot, joissa pieniä muutoksia "
 "ympäri tiedoston."
 
-#: src/diff.c:934
+#: src/diff.c:938
 msgid "    --help               display this help and exit"
 msgstr ""
 
-#: src/diff.c:935
+#: src/diff.c:939
 #, fuzzy
 msgid "-v, --version            output version information and exit"
 msgstr "-v  --version  Näyttää versiotiedot."
 
-#: src/diff.c:937
+#: src/diff.c:941
+#, fuzzy
 msgid ""
-"FILES are `FILE1 FILE2' or `DIR1 DIR2' or `DIR FILE...' or `FILE... DIR'."
+"FILES are 'FILE1 FILE2' or 'DIR1 DIR2' or 'DIR FILE...' or 'FILE... DIR'."
 msgstr ""
 "TIEDOSTOT ovat \"TIEDOSTO1 TIEDOSTO2\" tai \"HAK1 HAK2\" tai \"HAK "
 "TIEDOSTO...\" tai \"TIEDOSTO... HAK\"."
 
-#: src/diff.c:938
+#: src/diff.c:942
 #, fuzzy
 msgid ""
 "If --from-file or --to-file is given, there are no restrictions on FILE(s)."
@@ -1045,54 +1051,61 @@ msgstr ""
 "Jos valitsin --from-file tai --to-file on annettu, TIEDOSTOILLE ei ole "
 "rajoituksia."
 
-#: src/diff.c:939 src/diff3.c:481 src/sdiff.c:216
-msgid "If a FILE is `-', read standard input."
+#: src/diff.c:943 src/diff3.c:481 src/sdiff.c:219
+#, fuzzy
+msgid "If a FILE is '-', read standard input."
 msgstr "Jos TIEDOSTO on \"-\", luetaan vakiosyötteestä."
 
-#: src/diff.c:949
+#: src/diff.c:953
 #, c-format
 msgid "Usage: %s [OPTION]... FILES\n"
 msgstr "Käyttö: %s [VALITSIN]... TIEDOSTOT\n"
 
-#: src/diff.c:950
+#: src/diff.c:954
 #, fuzzy
 msgid "Compare FILES line by line."
 msgstr "Vertaa tiedostoja rivi riviltä."
 
-#: src/diff.c:984
-#, c-format
-msgid "conflicting %s option value `%s'"
+#: src/diff.c:988
+#, fuzzy, c-format
+msgid "conflicting %s option value '%s'"
 msgstr "ristiriitainen arvo \"%2$s\" valitsimelle %1$s"
 
-#: src/diff.c:997
+#: src/diff.c:1001
 #, c-format
 msgid "conflicting output style options"
 msgstr "ristiriitaiset tulostustyylin valinnat"
 
-#: src/diff.c:1054 src/diff.c:1254
+#: src/diff.c:1058 src/diff.c:1268
 #, c-format
 msgid "Only in %s: %s\n"
 msgstr "Vain hakemistossa %s: %s\n"
 
-#: src/diff.c:1183
-msgid "cannot compare `-' to a directory"
+#: src/diff.c:1192
+#, fuzzy
+msgid "cannot compare '-' to a directory"
 msgstr "ei voi verrata syötettä \"-\" hakemistoon"
 
-#: src/diff.c:1215
+#: src/diff.c:1227
 msgid "-D option not supported with directories"
 msgstr "valitsin -D ei toimi hakemistojen kanssa"
 
-#: src/diff.c:1224
+#: src/diff.c:1236
 #, c-format
 msgid "Common subdirectories: %s and %s\n"
 msgstr "Yhteiset alihakemistot: %s ja %s\n"
 
-#: src/diff.c:1264
+#: src/diff.c:1278 src/diff.c:1328
 #, c-format
 msgid "File %s is a %s while file %s is a %s\n"
 msgstr "Tiedosto %s on %s, kun taas tiedosto %s on %s\n"
 
-#: src/diff.c:1335
+#: src/diff.c:1314
+#, fuzzy, c-format
+msgid "Symbolic links %s and %s differ\n"
+msgstr "Tiedostot %s ja %s eroavat\n"
+
+#: src/diff.c:1399
 #, c-format
 msgid "Files %s and %s are identical\n"
 msgstr "Tiedostot %s ja %s ovat identtiset\n"
@@ -1108,11 +1121,12 @@ msgid "incompatible options"
 msgstr "yhteensopimattomat valitsimet"
 
 #: src/diff3.c:353
-msgid "`-' specified for more than one input file"
+#, fuzzy
+msgid "'-' specified for more than one input file"
 msgstr "\"-\" on määritetty useammaksi kuin yhdeksi syötetiedostoksi"
 
-#: src/diff3.c:395 src/diff3.c:1262 src/diff3.c:1666 src/diff3.c:1721
-#: src/sdiff.c:304 src/sdiff.c:853 src/sdiff.c:864
+#: src/diff3.c:395 src/diff3.c:1241 src/diff3.c:1645 src/diff3.c:1700
+#: src/sdiff.c:307 src/sdiff.c:844 src/sdiff.c:855
 msgid "read failed"
 msgstr "lukeminen epäonnistui"
 
@@ -1150,14 +1164,12 @@ msgid ""
 msgstr "-x  --overlap-only  Tulosta päällekkäiset muutokset."
 
 #: src/diff3.c:435
-#, fuzzy
 msgid "-X                          like -x, but bracket conflicts"
 msgstr ""
-"-E  --show-overlap  Tulosta yhdistämättömät muutokset, ristiriidat merkiten."
 
 #: src/diff3.c:436
 #, fuzzy
-msgid "-i                          append `w' and `q' commands to ed scripts"
+msgid "-i                          append 'w' and 'q' commands to ed scripts"
 msgstr "-i  Lisää komennot \"w\" ja \"q\" ed-skripteihin."
 
 #: src/diff3.c:438
@@ -1193,9 +1205,8 @@ msgid ""
 msgstr ""
 
 #: src/diff3.c:448
-#, fuzzy
 msgid "    --help                  display this help and exit"
-msgstr "-a  --text  Käsittelee kaikki tiedostot tekstinä."
+msgstr ""
 
 #: src/diff3.c:449
 #, fuzzy
@@ -1247,30 +1258,30 @@ msgstr "sisäinen virhe: virheellinen diff-tyyppi funktiossa process_diff"
 msgid "invalid diff format; invalid change separator"
 msgstr "virheellinen diff-muoto; virheellinen muutoserotin"
 
-#: src/diff3.c:1272
+#: src/diff3.c:1251
 msgid "invalid diff format; incomplete last line"
 msgstr "virheellinen diff-muoto; viimeinen rivi vajaa"
 
-#: src/diff3.c:1296 src/sdiff.c:272 src/util.c:301
-#, c-format
-msgid "subsidiary program `%s' could not be invoked"
+#: src/diff3.c:1275 src/sdiff.c:275 src/util.c:392
+#, fuzzy, c-format
+msgid "subsidiary program '%s' could not be invoked"
 msgstr "apuohjelmaa \"%s\" ei voitu käynnistää"
 
-#: src/diff3.c:1321
+#: src/diff3.c:1300
 msgid "invalid diff format; incorrect leading line chars"
 msgstr "virheellinen diff-muoto; väärät rivin alkumerkit"
 
-#: src/diff3.c:1394
+#: src/diff3.c:1373
 msgid "internal error: invalid diff type passed to output"
 msgstr "sisäinen virhe: virheellinen diff-muoto välitetty tulosteeseen"
 
-#: src/diff3.c:1668 src/diff3.c:1725
+#: src/diff3.c:1647 src/diff3.c:1704
 msgid "input file shrank"
 msgstr "syötetiedosto kutistui"
 
 #: src/dir.c:158
-#, c-format
-msgid "cannot compare file names `%s' and `%s'"
+#, fuzzy, c-format
+msgid "cannot compare file names '%s' and '%s'"
 msgstr "ei voi verrata tiedostonimiä \"%s\" ja \"%s\""
 
 #: src/dir.c:209
@@ -1283,7 +1294,7 @@ msgstr ""
 msgid "Thomas Lord"
 msgstr ""
 
-#: src/sdiff.c:170
+#: src/sdiff.c:173
 #, fuzzy
 msgid ""
 "-o, --output=FILE            operate interactively, sending output to FILE"
@@ -1291,87 +1302,94 @@ msgstr ""
 "-o TIEDOSTO  --output=TIEDOSTO  Vuorovaikutteinen toiminta, tuloste "
 "TIEDOSTOon."
 
-#: src/sdiff.c:172
+#: src/sdiff.c:175
 #, fuzzy
 msgid ""
 "-i, --ignore-case            consider upper- and lower-case to be the same"
 msgstr "-i  --ignore-case  Käsittele isot ja pienet kirjaimet samoina."
 
-#: src/sdiff.c:173
+#: src/sdiff.c:176
 #, fuzzy
 msgid "-E, --ignore-tab-expansion   ignore changes due to tab expansion"
 msgstr ""
 "-E  --ignore-tab-expansion  Älä huomioi sarkainten laajennuksesta johtuvia "
 "eroja."
 
-#: src/sdiff.c:174
+#: src/sdiff.c:177
 #, fuzzy
 msgid "-Z, --ignore-trailing-space  ignore white space at line end"
 msgstr "-w  --ignore-all-white-space  Älä huomioi tyhjiä merkkejä."
 
-#: src/sdiff.c:175
+#: src/sdiff.c:178
 #, fuzzy
 msgid ""
 "-b, --ignore-space-change    ignore changes in the amount of white space"
 msgstr ""
 "-b  --ignore-space-change  Älä huomioi tyhjistä merkeistä johtuvia eroja."
 
-#: src/sdiff.c:176
+#: src/sdiff.c:179
 #, fuzzy
 msgid "-W, --ignore-all-space       ignore all white space"
-msgstr "-w  --ignore-all-white-space  Älä huomioi tyhjiä merkkejä."
+msgstr "-W  --ignore-all-white  Älä huomioi tyhjiä merkkejä."
 
-#: src/sdiff.c:177
+#: src/sdiff.c:180
 #, fuzzy
 msgid "-B, --ignore-blank-lines     ignore changes whose lines are all blank"
 msgstr ""
 "-B  --ignore-blank-lines  Älä huomioi tyhjistä riveistä johtuvia eroja."
 
-#: src/sdiff.c:179
+#: src/sdiff.c:181
+#, fuzzy
+msgid "-I, --ignore-matching-lines=RE  ignore changes all whose lines match RE"
+msgstr ""
+"-I SI  --ignore-matching-lines=SI  Älä huomioi eroavia rivejä, jotka "
+"vastaavat säännöllistä lauseketta."
+
+#: src/sdiff.c:182
 #, fuzzy
 msgid "    --strip-trailing-cr      strip trailing carriage return on input"
 msgstr "--strip-trailing-cr  Poista lopussa oleva vaununpalautus syötteestä."
 
-#: src/sdiff.c:180
+#: src/sdiff.c:183
 #, fuzzy
 msgid "-a, --text                   treat all files as text"
 msgstr "-a  --text  Käsittelee kaikki tiedostot tekstinä."
 
-#: src/sdiff.c:182
+#: src/sdiff.c:185
 #, fuzzy
 msgid ""
 "-w, --width=NUM              output at most NUM (default 130) print columns"
 msgstr ""
 "-w MÄÄRÄ  --width=MÄÄRÄ  Tulosta enintään MÄÄRÄ (oletus 130) merkkiä riville."
 
-#: src/sdiff.c:183
+#: src/sdiff.c:186
 #, fuzzy
 msgid ""
 "-l, --left-column            output only the left column of common lines"
 msgstr "-l  --left-column  Tulosta vain yhteisten rivien vasen palsta"
 
-#: src/sdiff.c:184
+#: src/sdiff.c:187
 #, fuzzy
 msgid "-s, --suppress-common-lines  do not output common lines"
 msgstr "-s  --suppress-common-lines  Älä tulosta yhteisiä rivejä."
 
-#: src/sdiff.c:186
+#: src/sdiff.c:189
 #, fuzzy
 msgid "-t, --expand-tabs            expand tabs to spaces in output"
 msgstr "-t  --expand-tabs  Laajentaa sarkaimet välilyönneiksi tulosteessa."
 
-#: src/sdiff.c:187
+#: src/sdiff.c:190
 #, fuzzy
 msgid ""
 "    --tabsize=NUM            tab stops at every NUM (default 8) print columns"
 msgstr "--tabsize=KOKO Sarkaimen koko on KOKO (oletus 8) merkkiä."
 
-#: src/sdiff.c:189
+#: src/sdiff.c:192
 #, fuzzy
 msgid "-d, --minimal                try hard to find a smaller set of changes"
 msgstr "-d  --minimal  Yrittää löytää pienemmän määrän muutoksia."
 
-#: src/sdiff.c:190
+#: src/sdiff.c:193
 #, fuzzy
 msgid ""
 "-H, --speed-large-files      assume large files, many scattered small changes"
@@ -1379,40 +1397,39 @@ msgstr ""
 "-H  --speed-large-files  Oleta suuret tiedostot, joissa pieniä muutoksia "
 "ympäri tiedoston."
 
-#: src/sdiff.c:191
+#: src/sdiff.c:194
 #, fuzzy
 msgid "    --diff-program=PROGRAM   use PROGRAM to compare files"
 msgstr "--diff-program=OHJELMA  Käytä OHJELMAa tiedostojen vertaamiseen."
 
-#: src/sdiff.c:193
-#, fuzzy
+#: src/sdiff.c:196
 msgid "    --help                   display this help and exit"
-msgstr "-a  --text  Käsittelee kaikki tiedostot tekstinä."
+msgstr ""
 
-#: src/sdiff.c:194
+#: src/sdiff.c:197
 #, fuzzy
 msgid "-v, --version                output version information and exit"
 msgstr "-v  --version  Näyttää versiotiedot."
 
-#: src/sdiff.c:203
+#: src/sdiff.c:206
 #, c-format
 msgid "Usage: %s [OPTION]... FILE1 FILE2\n"
 msgstr "Käyttö: %s [VALITSIN]...TIEDOSTO1 TIEDOSTO2\n"
 
-#: src/sdiff.c:205
+#: src/sdiff.c:208
 #, fuzzy
 msgid "Side-by-side merge of differences between FILE1 and FILE2."
 msgstr "Tiedostojen erojen yhdistäminen vierekkäisillä palstoilla."
 
-#: src/sdiff.c:326
+#: src/sdiff.c:329
 msgid "cannot interactively merge standard input"
 msgstr "vakiosyötettä ei voi yhdistää vuorovaikutteisesti"
 
-#: src/sdiff.c:592
+#: src/sdiff.c:595
 msgid "both files to be compared are directories"
 msgstr "molemmat vertailtavat tiedostot ovat hakemistoja"
 
-#: src/sdiff.c:827
+#: src/sdiff.c:818
 #, fuzzy
 msgid ""
 "ed:\tEdit then use both versions, each decorated with a header.\n"
@@ -1437,175 +1454,6 @@ msgstr ""
 "v:\tSisällytä yhteiset rivit automaattisesti ja ilmoita niistä.\n"
 "q:\tLopeta.\n"
 
-#~ msgid "-i SKIP1:SKIP2  --ignore-initial=SKIP1:SKIP2"
-#~ msgstr "-i OHITA1:OHITA2 --ignore-initial=OHITA1:OHITA2"
-
-#~ msgid "-s  --quiet  --silent  Output nothing; yield exit status only."
-#~ msgstr "-s  --quiet  --silent  Ei tulostusta; vain paluuarvo."
-
-#, fuzzy
-#~ msgid "-v  --version  Output version info."
-#~ msgstr "-v  --version  Näyttää versiotiedot."
-
-#~ msgid "--help  Output this help."
-#~ msgstr "--help  Näyttää tämän ohjeen."
-
-#, fuzzy
-#~ msgid "Compare files line by line."
-#~ msgstr "Vertaa kolmea tiedostoa rivi riviltä."
-
-#, fuzzy
-#~ msgid "-E  --ignore-tab-expansion  Ignore changes due to tab expansion."
-#~ msgstr ""
-#~ "-E  --ignore-tab-expansion  Älä huomioi sarkainten laajennuksesta "
-#~ "johtuvia eroja."
-
-#, fuzzy
-#~ msgid ""
-#~ "-b  --ignore-space-change  Ignore changes in the amount of white space."
-#~ msgstr ""
-#~ "-b  --ignore-space-change  Älä huomioi tyhjistä merkeistä johtuvia eroja."
-
-#, fuzzy
-#~ msgid "-w  --ignore-all-space  Ignore all white space."
-#~ msgstr "-W  --ignore-all-white  Älä huomioi tyhjiä merkkejä."
-
-#, fuzzy
-#~ msgid "-B  --ignore-blank-lines  Ignore changes whose lines are all blank."
-#~ msgstr ""
-#~ "-B  --ignore-blank-lines  Älä huomioi tyhjistä riveistä johtuvia eroja."
-
-#, fuzzy
-#~ msgid "--strip-trailing-cr  Strip trailing carriage return on input."
-#~ msgstr ""
-#~ "--strip-trailing-cr  Poista lopussa oleva vaununpalautus syötteestä."
-
-#, fuzzy
-#~ msgid "-a  --text  Treat all files as text."
-#~ msgstr "-a  --text  Käsittelee kaikki tiedostot tekstinä."
-
-#, fuzzy
-#~ msgid ""
-#~ "-c  -C NUM  --context[=NUM]  Output NUM (default 3) lines of copied "
-#~ "context.\n"
-#~ "-u  -U NUM  --unified[=NUM]  Output NUM (default 3) lines of unified "
-#~ "context.\n"
-#~ "  -L LABEL  --label=LABEL  Use LABEL instead of file name.\n"
-#~ "  -p  --show-c-function  Show which C function each change is in.\n"
-#~ "  -F RE  --show-function-line=RE  Show the most recent line matching RE."
-#~ msgstr ""
-#~ "-c  -C MÄÄRÄ  --context[=MÄÄRÄ]  Tulosta MÄÄRÄ (oletus 3) riviä kopioitua "
-#~ "kontekstia.\n"
-#~ "-u  -U MÄÄRÄ  --unified[=MÄÄRÄ]  Tulosta MÄÄRÄ (oletus 3) riviä "
-#~ "yhdistettyä kontekstia.\n"
-#~ "  --label NIMIÖ  Käytä NIMIÖtä tiedostonimen sijaan.\n"
-#~ "  -p  --show-c-function  Näytä, minkä C-funktion sisällä kukin muutos "
-#~ "on.\n"
-#~ "  -F SI  --show-function-line=SI  Näytä viimeisin säännöllistä lauseketta "
-#~ "vastaava rivi."
-
-#, fuzzy
-#~ msgid "-e  --ed  Output an ed script."
-#~ msgstr "-e  --ed  Tulosta ed-skripti."
-
-#~ msgid ""
-#~ "-y  --side-by-side  Output in two columns.\n"
-#~ "  -W NUM  --width=NUM  Output at most NUM (default 130) print columns.\n"
-#~ "  --left-column  Output only the left column of common lines.\n"
-#~ "  --suppress-common-lines  Do not output common lines."
-#~ msgstr ""
-#~ "-y  --side-by-side  Tulosta kahdelle palstalle.\n"
-#~ "  -W MÄÄRÄ --width=MÄÄRÄ Tulosta korkeintaan MÄÄRÄ (oletus 130) merkkiä "
-#~ "riville.\n"
-#~ "  --left-column  Tulosta vain yhteisten rivien vasen palsta.\n"
-#~ "  --suppress-common-lines  Älä tulosta yhteisiä rivejä."
-
-#, fuzzy
-#~ msgid "-t  --expand-tabs  Expand tabs to spaces in output."
-#~ msgstr "-t  --expand-tabs  Laajentaa sarkaimet välilyönneiksi tulosteessa."
-
-#, fuzzy
-#~ msgid "-T  --initial-tab  Make tabs line up by prepending a tab."
-#~ msgstr "-T  --initial-tab  Lisää sarkain rivien alkuun."
-
-#, fuzzy
-#~ msgid "--tabsize=NUM  Tab stops are every NUM (default 8) print columns."
-#~ msgstr "--tabsize=KOKO Sarkaimen koko on KOKO (oletus 8) merkkiä."
-
-#, fuzzy
-#~ msgid "-d  --minimal  Try hard to find a smaller set of changes."
-#~ msgstr "-d  --minimal  Yrittää löytää pienemmän määrän muutoksia."
-
-#~ msgid ""
-#~ "--speed-large-files  Assume large files and many scattered small changes."
-#~ msgstr ""
-#~ "--speed-large-files  Olettaa tiedostojen olevan suuria ja muutosten "
-#~ "pieniä sekä hajanaisia."
-
-#, fuzzy
-#~ msgid "-E  --show-overlap  Output unmerged changes, bracketing conflicts."
-#~ msgstr "-A  --show-all  Tulosta kaikki muutokset, ristiriidat merkiten."
-
-#~ msgid "-X  Output overlapping changes, bracketing them."
-#~ msgstr "-X  Tulosta päällekkäiset muutokset sulkeiden sisään."
-
-#~ msgid "-m  --merge  Output merged file instead of ed script (default -A)."
-#~ msgstr ""
-#~ "-m  --merge  Tulosta yhdistetty tiedosto ed-skriptin sijaan (oletus -A)."
-
-#~ msgid "-L LABEL  --label=LABEL  Use LABEL instead of file name."
-#~ msgstr "-L NIMIÖ  --label=NIMIÖ  Käytä NIMIÖtä tiedostonimen sijaan."
-
-#, fuzzy
-#~ msgid "--diff-program=PROGRAM  Use PROGRAM to compare files."
-#~ msgstr "--diff-program=OHJELMA  Käytä OHJELMAa tiedostojen vertaamiseen."
-
-#, fuzzy
-#~ msgid "-W  --ignore-all-space  Ignore all white space."
-#~ msgstr "-W  --ignore-all-white  Älä huomioi tyhjiä merkkejä."
-
-#, fuzzy
-#~ msgid "-w NUM  --width=NUM  Output at most NUM (default 130) print columns."
-#~ msgstr ""
-#~ "-w MÄÄRÄ  --width=MÄÄRÄ  Tulosta enintään MÄÄRÄ (oletus 130) merkkiä "
-#~ "riville."
-
-#, fuzzy
-#~ msgid "-l  --left-column  Output only the left column of common lines."
-#~ msgstr "-l  --left-column  Tulosta vain yhteisten rivien vasen palsta"
-
-#, fuzzy
-#~ msgid ""
-#~ "-H  --speed-large-files  Assume large files and many scattered small "
-#~ "changes."
-#~ msgstr ""
-#~ "--speed-large-files  Olettaa tiedostojen olevan suuria ja muutosten "
-#~ "pieniä sekä hajanaisia."
-
-#, fuzzy
-#~ msgid "fclose failed"
-#~ msgstr "lukeminen epäonnistui"
-
-#, fuzzy
-#~ msgid "pipe failed"
-#~ msgstr "kirjoitus epäonnistui"
-
-#, fuzzy
-#~ msgid "fork failed"
-#~ msgstr "lukeminen epäonnistui"
-
-#, fuzzy
-#~ msgid "fdopen failed"
-#~ msgstr "lukeminen epäonnistui"
-
-#, fuzzy
-#~ msgid "waitpid failed"
-#~ msgstr "kirjoitus epäonnistui"
-
-#, fuzzy
-#~ msgid "mkstemp failed"
-#~ msgstr "kirjoitus epäonnistui"
-
 #~ msgid "%s: illegal option -- %c\n"
 #~ msgstr "%s: virheellinen valitsin -- %c\n"
 
@@ -1621,6 +1469,15 @@ msgstr ""
 #~ "TIETTYYN\n"
 #~ "TARKOITUKSEEN.\n"
 
+#~ msgid "-i SKIP1:SKIP2  --ignore-initial=SKIP1:SKIP2"
+#~ msgstr "-i OHITA1:OHITA2 --ignore-initial=OHITA1:OHITA2"
+
+#~ msgid "-s  --quiet  --silent  Output nothing; yield exit status only."
+#~ msgstr "-s  --quiet  --silent  Ei tulostusta; vain paluuarvo."
+
+#~ msgid "--help  Output this help."
+#~ msgstr "--help  Näyttää tämän ohjeen."
+
 #~ msgid "Report bugs to <bug-gnu-utils@gnu.org>."
 #~ msgstr ""
 #~ "Ilmoita ohjelmistovioista (englanniksi) osoitteeseen <bug-gnu-utils@gnu."
@@ -1631,6 +1488,53 @@ msgstr ""
 
 #~ msgid "`-%ld' option is obsolete; omit it"
 #~ msgstr "valitsin \"-%ld\" on vanhentunut; jätä se pois"
+
+#~ msgid ""
+#~ "-c  -C NUM  --context[=NUM]  Output NUM (default 3) lines of copied "
+#~ "context.\n"
+#~ "-u  -U NUM  --unified[=NUM]  Output NUM (default 3) lines of unified "
+#~ "context.\n"
+#~ "  --label LABEL  Use LABEL instead of file name.\n"
+#~ "  -p  --show-c-function  Show which C function each change is in.\n"
+#~ "  -F RE  --show-function-line=RE  Show the most recent line matching RE."
+#~ msgstr ""
+#~ "-c  -C MÄÄRÄ  --context[=MÄÄRÄ]  Tulosta MÄÄRÄ (oletus 3) riviä kopioitua "
+#~ "kontekstia.\n"
+#~ "-u  -U MÄÄRÄ  --unified[=MÄÄRÄ]  Tulosta MÄÄRÄ (oletus 3) riviä "
+#~ "yhdistettyä kontekstia.\n"
+#~ "  --label NIMIÖ  Käytä NIMIÖtä tiedostonimen sijaan.\n"
+#~ "  -p  --show-c-function  Näytä, minkä C-funktion sisällä kukin muutos "
+#~ "on.\n"
+#~ "  -F SI  --show-function-line=SI  Näytä viimeisin säännöllistä lauseketta "
+#~ "vastaava rivi."
+
+#~ msgid ""
+#~ "-y  --side-by-side  Output in two columns.\n"
+#~ "  -W NUM  --width=NUM  Output at most NUM (default 130) print columns.\n"
+#~ "  --left-column  Output only the left column of common lines.\n"
+#~ "  --suppress-common-lines  Do not output common lines."
+#~ msgstr ""
+#~ "-y  --side-by-side  Tulosta kahdelle palstalle.\n"
+#~ "  -W MÄÄRÄ --width=MÄÄRÄ Tulosta korkeintaan MÄÄRÄ (oletus 130) merkkiä "
+#~ "riville.\n"
+#~ "  --left-column  Tulosta vain yhteisten rivien vasen palsta.\n"
+#~ "  --suppress-common-lines  Älä tulosta yhteisiä rivejä."
+
+#~ msgid ""
+#~ "--speed-large-files  Assume large files and many scattered small changes."
+#~ msgstr ""
+#~ "--speed-large-files  Olettaa tiedostojen olevan suuria ja muutosten "
+#~ "pieniä sekä hajanaisia."
+
+#~ msgid "-X  Output overlapping changes, bracketing them."
+#~ msgstr "-X  Tulosta päällekkäiset muutokset sulkeiden sisään."
+
+#~ msgid "-m  --merge  Output merged file instead of ed script (default -A)."
+#~ msgstr ""
+#~ "-m  --merge  Tulosta yhdistetty tiedosto ed-skriptin sijaan (oletus -A)."
+
+#~ msgid "-L LABEL  --label=LABEL  Use LABEL instead of file name."
+#~ msgstr "-L NIMIÖ  --label=NIMIÖ  Käytä NIMIÖtä tiedostonimen sijaan."
 
 #~ msgid "subsidiary program `%s' not found"
 #~ msgstr "apuohjelmaa \"%s\" ei löytynyt"

@@ -1,13 +1,13 @@
 # Check prerequisites for compiling lib/c-stack.c.
 
-# Copyright (C) 2002-2004, 2008-2011 Free Software Foundation, Inc.
+# Copyright (C) 2002-2004, 2008-2013 Free Software Foundation, Inc.
 # This file is free software; the Free Software Foundation
 # gives unlimited permission to copy and/or distribute it,
 # with or without modifications, as long as this notice is preserved.
 
 # Written by Paul Eggert.
 
-# serial 13
+# serial 15
 
 AC_DEFUN([AC_SYS_XSI_STACK_OVERFLOW_HEURISTIC],
   [
@@ -23,7 +23,7 @@ AC_DEFUN([AC_SYS_XSI_STACK_OVERFLOW_HEURISTIC],
        FAULT_YIELDS_SIGBUS=1 ;;
      hpux*) # HP-UX
        FAULT_YIELDS_SIGBUS=1 ;;
-     macos* | darwin*) # MacOS X
+     macos* | darwin*) # Mac OS X
        FAULT_YIELDS_SIGBUS=1 ;;
      gnu*) # Hurd
        FAULT_YIELDS_SIGBUS=1 ;;
@@ -338,7 +338,7 @@ AC_DEFUN([gl_PREREQ_C_STACK],
    AC_REQUIRE([AC_FUNC_ALLOCA])
 
    AC_CHECK_FUNCS_ONCE([sigaltstack])
-   AC_CHECK_DECLS([sigaltstack], , , [#include <signal.h>])
+   AC_CHECK_DECLS([sigaltstack], , , [[#include <signal.h>]])
 
    AC_CHECK_HEADERS_ONCE([unistd.h ucontext.h])
 

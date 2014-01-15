@@ -1,6 +1,6 @@
 # Main Automakefile for GNU diffutils.
 
-# Copyright (C) 2001-2002, 2004, 2006, 2009-2011 Free Software Foundation, Inc.
+# Copyright (C) 2001-2002, 2004, 2006, 2009-2013 Free Software Foundation, Inc.
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
 ALL_RECURSIVE_TARGETS =
 
 EXTRA_DIST = bootstrap exgettext ChangeLog-2008 cfg.mk dist-check.mk
-SUBDIRS = lib src tests doc man po ms gnulib-tests
+SUBDIRS = lib src tests doc man po gnulib-tests
 
 ACLOCAL_AMFLAGS = -I m4
 AM_CFLAGS = $(WARN_CFLAGS) $(WERROR_CFLAGS)

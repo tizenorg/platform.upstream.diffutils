@@ -1,6 +1,6 @@
 # Configure template for GNU Diffutils.
 
-# Copyright (C) 1994-1995, 1998, 2001-2002, 2004, 2006, 2009-2011 Free Software
+# Copyright (C) 1994-1995, 1998, 2001-2002, 2004, 2006, 2009-2013 Free Software
 # Foundation, Inc.
 
 # This program is free software: you can redistribute it and/or modify
@@ -26,14 +26,13 @@ AC_CONFIG_SRCDIR([src/diff.c])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([m4])
 
-AM_INIT_AUTOMAKE([1.11 dist-xz color-tests parallel-tests])
+AM_INIT_AUTOMAKE([1.11 dist-xz no-dist-gzip color-tests parallel-tests])
 AM_SILENT_RULES([yes]) # make --enable-silent-rules the default.
 
 AC_CONFIG_HEADER([lib/config.h:lib/config.hin])
 
 AC_PROG_AWK
 AC_PROG_CC
-AM_PROG_CC_STDC
 AM_MISSING_PROG([HELP2MAN], [help2man])
 AC_PROG_RANLIB
 gl_EARLY
@@ -48,7 +47,11 @@ AC_ARG_ENABLE([gcc-warnings],
      *)      AC_MSG_ERROR([bad value $enableval for gcc-warnings option]) ;;
    esac
    gl_gcc_warnings=$enableval],
-  [gl_gcc_warnings=no]
+  [if test -d "$srcdir"/.git; then
+     gl_gcc_warnings=yes
+   else
+     gl_gcc_warnings=no
+   fi]
 )
 
 if test "$gl_gcc_warnings" = yes; then
@@ -96,6 +99,7 @@ if test "$gl_gcc_warnings" = yes; then
   gl_WARN_ADD([-Wno-sign-compare])     # Too many warnings for now
   gl_WARN_ADD([-Wno-pointer-sign])     # Too many warnings for now
   gl_WARN_ADD([-Wno-unused-parameter]) # Too many warnings for now
+  gl_WARN_ADD([-Wno-format-nonliteral])
 
   # In spite of excluding -Wlogical-op above, it is enabled, as of
   # gcc 4.5.0 20090517, and it provokes warnings in cat.c, dd.c, truncate.c
@@ -157,7 +161,7 @@ test -f $srcdir/.tarball-version \
   || SRC_VERSION_C=../src/version.c
 
 AM_GNU_GETTEXT([external], [need-ngettext])
-AM_GNU_GETTEXT_VERSION([0.17])
+AM_GNU_GETTEXT_VERSION([0.18.2])
 XGETTEXT="AWK='$AWK' \$(SHELL) \$(top_srcdir)/exgettext $XGETTEXT"
 
 AC_CONFIG_FILES([
@@ -168,6 +172,5 @@ AC_CONFIG_FILES([
   gnulib-tests/Makefile
   man/Makefile
   po/Makefile.in
-  ms/Makefile
 ])
 AC_OUTPUT
