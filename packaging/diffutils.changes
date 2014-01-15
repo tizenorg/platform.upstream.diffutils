@@ -1,3 +1,10 @@
-* Sat May 11 2013 Anas Nashif <anas.nashif@intel.com> submit/tizen/20130509.173821@7f395c5
-- Set license using %license
+* Wed Jan 15 2014 Łukasz Stelmach <l.stelmach@samsung.com> upstream/3.3@873702
+- Import Upstream version 3.3
+- resetting manifest requested domain to floor (5707c5fb)
 
+* Sat May 11 2013 Anas Nashif <anas.nashif@intel.com> submit/tizen/20130509.173821@7f395c5
+- Set license using %license (4cd65558)
+- remove patches (7f395c54)
+- stdio          (272bfb8a)
+- remove patches (4f3ddb45)
+- add packaging  (b675d80d)
